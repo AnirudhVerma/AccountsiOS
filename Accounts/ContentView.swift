@@ -18,87 +18,97 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            VStack{
-                HelloText()
-                Icon()
-                LoginText()
-                TextField("Phone Number",
-                          text: $username)
-                    .padding()
-                    .background(lightGreyColor)
-                    .cornerRadius(5.0)
-                    .padding(.bottom, 20)
-                    .keyboardType(.numberPad)
-                    .onReceive(username.publisher.collect()) {
-                            username = String($0.prefix(10))
-                          }
-                SecureField("Password", text: $password)
-                    .padding()
-                    .background(lightGreyColor)
-                    .cornerRadius(5.0)
-                    .padding(.bottom, 20)
- 
-                NavigationLink(destination: DummyView(), tag: 1, selection: $selection) {
-                    Button.init(action: {
-                        if(password == "password"){
-                            self.selection = 1
+            ScrollView {
+                VStack{
+                    HelloText()
+                    Icon()
+                    LoginText()
+                    TextField("Phone Number",
+                              text: $username)
+                        .padding()
+                        .background(lightGreyColor)
+                        .cornerRadius(5.0)
+                        .padding(.bottom, 20)
+                        .keyboardType(.numberPad)
+                        .onReceive(username.publisher.collect()) {
+                                username = String($0.prefix(10))
+                              }
+                    SecureField("Password", text: $password)
+                        .padding()
+                        .background(lightGreyColor)
+                        .cornerRadius(5.0)
+                        .padding(.bottom, 20)
+     
+                    NavigationLink(destination: DummyView(), tag: 1, selection: $selection) {
+                        Button.init(action: {
+                            if(password == "password"){
+                                self.selection = 1
+                            }
+                            else{
+                                showsAlert = true
+                            }
+                        }) {
+                            Text("Login")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .padding()
+                                .frame(width: 220, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                .background(Color.blue)
+                                .cornerRadius(35)
                         }
-                        else{
-                            showsAlert = true
-                        }
-                    }) {
-                        Text("Login")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .padding()
-                            .frame(width: 220, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            .background(Color.blue)
-                            .cornerRadius(35)
-                    }
-                                }
-                
-//                NavigationLink(destination:  DummyView.init(username: username, password: password), tag: 1, selection: $selection) {
-//
-//                    Button.init(action: {
-//                        if !isValidPassword(text: password){
-//                            showsAlert = true
-//                        }
-//                        else{
-//                            self.selection = 1
-//                        }
-//                    }, label: {
-//                        Text("Login")
-//                    }).alert(isPresented: self.$showsAlert) {
-//                        Alert(title: Text("The password you entered is incorrect, please try again"))
-//                    }
-//            }
-                
-                NavigationLink(destination:  DummyView.init(username: username, password: password), tag: 1, selection: $selection) {
+                                    }
                     
-                    Button.init(action: {
-                            self.selection = 1
+    //                NavigationLink(destination:  DummyView.init(username: username, password: password), tag: 1, selection: $selection) {
+    //
+    //                    Button.init(action: {
+    //                        if !isValidPassword(text: password){
+    //                            showsAlert = true
+    //                        }
+    //                        else{
+    //                            self.selection = 1
+    //                        }
+    //                    }, label: {
+    //                        Text("Login")
+    //                    }).alert(isPresented: self.$showsAlert) {
+    //                        Alert(title: Text("The password you entered is incorrect, please try again"))
+    //                    }
+    //            }
+                    
+                    NavigationLink(destination:  DummyView.init(username: username, password: password), tag: 1, selection: $selection) {
                         
-                    }, label: {
-                        Text("Login!")
-                    }).alert(isPresented: self.$showsAlert) {
-                        Alert(title: Text("The password you entered is incorrect, please try again"))
+                        Button.init(action: {
+                                self.selection = 1
+                            
+                        }, label: {
+                            Text("Login!")
+                        }).alert(isPresented: self.$showsAlert) {
+                            Alert(title: Text("The password you entered is incorrect, please try again"))
+                        }
                     }
-                }
-                
-                NavigationLink(
-                    destination: HomeScreen(),
-                    label: {
-                        Text("Home")
-                    })
-                
-                
-//                    Button(
-//                                                        ("Login")) {
-//                                                        self.selection = 1
-//                                                    }
-//                                                }
-                
-            }.padding()
+                    
+                    NavigationLink(
+                        destination: HomeScreen(),
+                        label: {
+                            Text("Bottom navigation bar")
+                        })
+                    
+                    NavigationLink(
+                        destination: PostList(),
+                        label: {
+                            Text("Web Service Call")
+                        }
+                                   )
+                    
+                    
+                    
+    //                    Button(
+    //                                                        ("Login")) {
+    //                                                        self.selection = 1
+    //                                                    }
+    //                                                }
+                    
+                }.padding()
+            }
     }
 }
 

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,8 @@
 		189E26C026A81539003EC058 /* integra_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 189E26BF26A81539003EC058 /* integra_logo.png */; };
 		189E26C826A87DCD003EC058 /* sunset.png in Resources */ = {isa = PBXBuildFile; fileRef = 189E26C726A87DCD003EC058 /* sunset.png */; };
 		189E26CD26A94254003EC058 /* DummyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189E26CC26A94254003EC058 /* DummyView.swift */; };
+		18BD0C3E26B58A02004119B3 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD0C3D26B58A02004119B3 /* Data.swift */; };
+		18BD0C4326B5974D004119B3 /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD0C4226B5974D004119B3 /* PostList.swift */; };
 		18BE83FA26A6BE16002D3D76 /* AccountsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE83F926A6BE16002D3D76 /* AccountsApp.swift */; };
 		18BE83FC26A6BE16002D3D76 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE83FB26A6BE16002D3D76 /* ContentView.swift */; };
 		18BE83FE26A6BE17002D3D76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18BE83FD26A6BE17002D3D76 /* Assets.xcassets */; };
@@ -46,6 +48,8 @@
 		189E26BF26A81539003EC058 /* integra_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = integra_logo.png; path = "../../../UPI/UPI-iPSP/app/src/main/res/drawable/integra_logo.png"; sourceTree = "<group>"; };
 		189E26C726A87DCD003EC058 /* sunset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sunset.png; path = ../../../../Downloads/sunset.png; sourceTree = "<group>"; };
 		189E26CC26A94254003EC058 /* DummyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyView.swift; sourceTree = "<group>"; };
+		18BD0C3D26B58A02004119B3 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		18BD0C4226B5974D004119B3 /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
 		18BE83F626A6BE16002D3D76 /* Accounts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Accounts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BE83F926A6BE16002D3D76 /* AccountsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsApp.swift; sourceTree = "<group>"; };
 		18BE83FB26A6BE16002D3D76 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 				18E56C6126AB245B0060BC94 /* HomeScreen.swift */,
 				189E26BF26A81539003EC058 /* integra_logo.png */,
 				18BE83FD26A6BE17002D3D76 /* Assets.xcassets */,
+				18BD0C3D26B58A02004119B3 /* Data.swift */,
+				18BD0C4226B5974D004119B3 /* PostList.swift */,
 				189E26C726A87DCD003EC058 /* sunset.png */,
 				18BE840226A6BE17002D3D76 /* Info.plist */,
 				18BE83FF26A6BE17002D3D76 /* Preview Content */,
@@ -196,7 +202,6 @@
 				18BE83F226A6BE16002D3D76 /* Sources */,
 				18BE83F326A6BE16002D3D76 /* Frameworks */,
 				18BE83F426A6BE16002D3D76 /* Resources */,
-				48F3673E86C9C9C3878ED3BF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,7 +239,6 @@
 				18BE840E26A6BE17002D3D76 /* Sources */,
 				18BE840F26A6BE17002D3D76 /* Frameworks */,
 				18BE841026A6BE17002D3D76 /* Resources */,
-				71FF2C307C99E8CF8DD7AC36 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -317,23 +321,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		48F3673E86C9C9C3878ED3BF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Accounts/Pods-Accounts-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Accounts/Pods-Accounts-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Accounts/Pods-Accounts-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5ACA6CFC1B107CDF8DE385F0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -378,23 +365,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		71FF2C307C99E8CF8DD7AC36 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Accounts-AccountsUITests/Pods-Accounts-AccountsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Accounts-AccountsUITests/Pods-Accounts-AccountsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Accounts-AccountsUITests/Pods-Accounts-AccountsUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		826D2BB10BBD4F66C3D04CF2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -425,10 +395,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				18E56C6226AB245B0060BC94 /* HomeScreen.swift in Sources */,
+				18BD0C3E26B58A02004119B3 /* Data.swift in Sources */,
 				18BE83FC26A6BE16002D3D76 /* ContentView.swift in Sources */,
 				183E6FE226AED4500019D947 /* Service.swift in Sources */,
 				189E26CD26A94254003EC058 /* DummyView.swift in Sources */,
 				18BE83FA26A6BE16002D3D76 /* AccountsApp.swift in Sources */,
+				18BD0C4326B5974D004119B3 /* PostList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
